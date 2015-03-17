@@ -1,0 +1,22 @@
+<ion-view >
+<ion-nav-title class="item-button-right">
+<!-- 文件列表 [{{curPath}}]<button class="button button-clear icon-left ion-reply" ng-click="goBack()">回退</button> -->
+<!-- <button class="button icon ion-navicon"></button> -->
+  <h1 class="title">文件列表 [{{curPath}}]</h1>
+  <!-- <button class="button button-clear icon-left ion-reply" ng-click="goBack()">回退</button> -->
+</ion-nav-title>
+  <ion-content padding="true" >
+    <ion-list>
+      <ion-item ng-repeat="file in fileList| orderBy:'-isDirectory'" ng-href="{{file.isDirectory? '#/app/listfile?path=' + file.path : '#/app/viewfile?path=' + file.path}}"  class="item item-button-right">
+        <i class="icon ion-email"></i> {{file.title}}
+        <!-- <button class="button button-positive"><i class="icon ion-mic-a"></i></button> -->
+        <!-- <button class="button button-positive"><i class="icon ion-chatbubble-working"></i></button> 只能有1个btn-->
+        <!-- <button class="button icon-left ion-home">Home</button> -->
+      </ion-item>
+    </ion-list>
+   <!--  <div class="bar bar-footer">
+	  <button class="button button-clear pull-right">Right</button>
+	</div> bar-foote在这里有效，但是内容最底部被遮住了-->
+  </ion-content>
+  
+</ion-view>
